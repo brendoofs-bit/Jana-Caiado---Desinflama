@@ -1,5 +1,6 @@
 // Links
 export const WHATSAPP_LINK = "https://chat.whatsapp.com/HSFB5YpO9q2Dn1IN64Vg86";
+export const HOTMART_LINK = "https://pay.hotmart.com/F103758113R";
 
 // Images
 // Imagem 01: Woman writing / Expert

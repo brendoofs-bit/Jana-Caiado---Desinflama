@@ -19,10 +19,12 @@ import {
   Minus,
   Frown,
   Sprout,
-  HelpCircle
+  HelpCircle,
+  Lock,
+  MessageCircle
 } from 'lucide-react';
 import { Button } from './components/Button';
-import { IMG_EXPERT, IMG_HERO_METHOD } from './constants';
+import { IMG_EXPERT, IMG_HERO_METHOD, HOTMART_LINK, WHATSAPP_LINK } from './constants';
 
 const Hero = () => (
   <header className="relative bg-gradient-to-b from-cream-100 to-cream-50 pt-20 pb-32 overflow-hidden">
@@ -56,13 +58,22 @@ const Hero = () => (
         </p>
       </div>
       
+      {/* CTA Section - Primary Sale, Secondary Lead */}
       <div className="flex flex-col items-center gap-4">
-        <Button className="text-lg px-10 py-5 no-underline">
-          QUERO ENTRAR NO GRUPO VIP
+        <Button href={HOTMART_LINK} variant="success" className="text-lg px-10 py-5 no-underline uppercase tracking-wide">
+          QUERO COMEÇAR O PROTOCOLO AGORA
         </Button>
-        <p className="text-sm text-brown-800/60 max-w-md">
-          <span className="font-semibold text-terra-500">Comunidade secreta:</span> por aqui acontecerá o pré lançamento com um desconto único!
-        </p>
+        
+        <div className="flex flex-col md:flex-row items-center gap-2 text-sm text-brown-800/70 mt-2">
+           <span className="flex items-center gap-1"><Lock size={14}/> Pagamento Seguro</span>
+           <span className="hidden md:inline">•</span>
+           <span className="flex items-center gap-1"><ShieldCheck size={14}/> Garantia de 7 Dias</span>
+        </div>
+
+        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-terra-600 hover:text-terra-700 underline text-sm mt-4 font-medium flex items-center gap-2">
+           <MessageCircle size={16}/>
+           Tenho dúvidas, quero entrar no grupo de espera
+        </a>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-3xl mx-auto">
@@ -444,9 +455,9 @@ const Deliverables = () => (
       </div>
       
       <div className="mt-12 text-center">
-        <div className="inline-block bg-terra-100 text-terra-700 px-6 py-3 rounded-lg font-medium animate-pulse">
-          ✨ Bônus Exclusivos serão revelados dentro do grupo!
-        </div>
+        <Button href={HOTMART_LINK} variant="success" className="text-lg px-8 py-4 no-underline animate-pulse">
+           GARANTA SEU ACESSO A TODO O ARSENAL AGORA
+        </Button>
       </div>
     </div>
   </section>
@@ -488,12 +499,6 @@ const Transformation = () => (
           </div>
         ))}
       </div>
-
-      <div className="mt-16 text-center">
-        <Button variant="secondary" className="text-lg px-12 no-underline">
-          QUERO VIVER ESSA TRANSFORMAÇÃO
-        </Button>
-      </div>
     </div>
   </section>
 );
@@ -511,19 +516,6 @@ const TwoPaths = () => (
         </h2>
         <p className="text-brown-700 text-lg">
           Escolha com consciência — porque a endometriose não para enquanto você decide.
-        </p>
-      </div>
-
-      {/* Context Card */}
-      <div className="bg-white p-8 md:p-10 rounded-2xl shadow-sm mb-8 text-center border border-cream-200">
-        <p className="text-brown-800 text-lg leading-relaxed mb-6">
-          Hoje você sabe que <strong>inflamação crônica</strong> é a raiz que alimenta o seu sofrimento. 
-          Você também sabe que existe um protocolo estruturado, com método e passo a passo, 
-          para começar a reduzir isso no seu dia a dia.
-        </p>
-        <p className="text-brown-800 text-lg leading-relaxed">
-          A pergunta agora é: você vai continuar só "apagando incêndio" com remédios, 
-          ou vai começar a atacar a causa com estratégia?
         </p>
       </div>
 
@@ -555,30 +547,77 @@ const TwoPaths = () => (
           </p>
         </div>
       </div>
-
-      {/* Truth Card */}
-      <div className="bg-brown-900 text-cream-50 p-8 rounded-2xl shadow-xl">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="bg-green-500 rounded flex items-center justify-center w-6 h-6 shrink-0">
-            <Check className="w-4 h-4 text-white" />
-          </div>
-          <h4 className="font-bold text-lg">Verdade simples:</h4>
-        </div>
-        <p className="text-cream-50/90 leading-relaxed">
-          Você não precisa esperar "piorar" para agir. Quanto antes você reduzir inflamação, melhores tendem a ser os próximos ciclos — e mais chance você tem de recuperar qualidade de vida.
-        </p>
-      </div>
     </div>
   </section>
 );
 
+const OfferSection = () => (
+  <section className="py-20 bg-white border-y border-cream-200 relative overflow-hidden">
+     {/* Decorative BG */}
+     <div className="absolute top-0 right-0 w-1/2 h-full bg-cream-50/50 skew-x-12 translate-x-1/3 pointer-events-none"></div>
+
+     <div className="container mx-auto px-4 max-w-4xl relative z-10">
+        <div className="bg-white rounded-3xl shadow-2xl border-2 border-terra-100 overflow-hidden">
+           <div className="bg-terra-500 p-6 text-center">
+              <h2 className="text-white font-serif text-3xl font-bold">OFERTA ESPECIAL</h2>
+              <p className="text-white/90">Acesso Imediato ao Protocolo Completo</p>
+           </div>
+           
+           <div className="p-8 md:p-12 text-center">
+              <h3 className="text-2xl md:text-3xl text-brown-900 font-serif mb-6">
+                Comece sua jornada sem dor hoje mesmo
+              </h3>
+              
+              <div className="space-y-4 mb-8 text-left max-w-lg mx-auto">
+                 <div className="flex items-center gap-3">
+                    <Check className="text-green-500 shrink-0"/>
+                    <span className="text-brown-700">Protocolo Antiinflamatório & Low FODMAP</span>
+                 </div>
+                 <div className="flex items-center gap-3">
+                    <Check className="text-green-500 shrink-0"/>
+                    <span className="text-brown-700">Aulas Explicativas com Janaína Caiado</span>
+                 </div>
+                 <div className="flex items-center gap-3">
+                    <Check className="text-green-500 shrink-0"/>
+                    <span className="text-brown-700">Guia de Suplementação Específica</span>
+                 </div>
+                 <div className="flex items-center gap-3">
+                    <Check className="text-green-500 shrink-0"/>
+                    <span className="text-brown-700">Materiais de Apoio (Calendário, Score de Dor)</span>
+                 </div>
+                 <div className="flex items-center gap-3">
+                    <Check className="text-green-500 shrink-0"/>
+                    <span className="text-brown-700">Garantia Incondicional de 7 dias</span>
+                 </div>
+              </div>
+
+              <Button href={HOTMART_LINK} variant="success" className="text-xl py-5 w-full md:w-auto px-12 shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
+                 SIM! QUERO ME INSCREVER AGORA
+              </Button>
+              
+              <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-6 text-sm text-gray-500">
+                 <div className="flex items-center gap-2">
+                    <ShieldCheck className="text-terra-500" size={20}/>
+                    <span>Risco Zero: 7 dias de garantia</span>
+                 </div>
+                 <div className="flex items-center gap-2">
+                    <Lock className="text-terra-500" size={20}/>
+                    <span>Ambiente Seguro Hotmart</span>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </section>
+);
+
 const Testimonials = () => (
-  <section className="py-20 bg-white">
+  <section className="py-20 bg-cream-50">
     <div className="container mx-auto px-4 max-w-6xl">
       <h2 className="text-center font-serif text-4xl text-brown-900 mb-16">Resultados Reais</h2>
       
       <div className="grid md:grid-cols-2 gap-8">
-        <div className="bg-cream-50 p-8 rounded-2xl border border-cream-200 shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-white p-8 rounded-2xl border border-cream-200 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex text-terra-500 mb-4">
             {[1,2,3,4,5].map(s => <Star key={s} size={16} fill="currentColor" />)}
           </div>
@@ -595,7 +634,7 @@ const Testimonials = () => (
           </div>
         </div>
 
-        <div className="bg-cream-50 p-8 rounded-2xl border border-cream-200 shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-white p-8 rounded-2xl border border-cream-200 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex text-terra-500 mb-4">
             {[1,2,3,4,5].map(s => <Star key={s} size={16} fill="currentColor" />)}
           </div>
@@ -695,15 +734,16 @@ const FooterCTA = () => (
 
       <div className="bg-white p-8 rounded-3xl shadow-lg border-2 border-terra-100 max-w-xl mx-auto">
         <p className="font-serif text-xl text-brown-900 mb-6">
-          Entre no Grupo VIP de Pré-Lançamento
+          Comece agora sua jornada
         </p>
-        <Button fullWidth className="text-lg py-5 animate-bounce-slow no-underline">
-          ENTRAR NA COMUNIDADE SECRETA
+        <Button href={HOTMART_LINK} variant="success" fullWidth className="text-lg py-5 animate-bounce-slow no-underline">
+          COMPRAR O PROTOCOLO AGORA
         </Button>
-        <p className="text-xs text-brown-500 mt-4">
-          Informações semanais sobre endometriose e pré lançamento.
-          <br/>Desconto exclusivo somente para quem estiver no grupo.
-        </p>
+        <div className="mt-4 pt-4 border-t border-cream-100">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-sm text-brown-500 hover:text-terra-600 underline">
+               Ainda tenho dúvidas? Falar no Grupo VIP
+            </a>
+        </div>
       </div>
       
       <p className="text-brown-400 text-sm mt-16">
@@ -727,6 +767,7 @@ export default function App() {
       <Expert />
       <Transformation />
       <TwoPaths />
+      <OfferSection />
       <Testimonials />
       <FAQ />
       <FooterCTA />
