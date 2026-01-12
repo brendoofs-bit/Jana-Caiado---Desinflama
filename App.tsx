@@ -21,9 +21,7 @@ import {
   Sprout,
   HelpCircle,
   Lock,
-  MessageCircle,
-  Gift,
-  Zap
+  MessageCircle
 } from 'lucide-react';
 import { Button } from './components/Button';
 import { IMG_EXPERT, IMG_HERO_METHOD, HOTMART_LINK, WHATSAPP_LINK } from './constants';
@@ -74,7 +72,7 @@ const Hero = () => (
 
         <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-terra-600 hover:text-terra-700 underline text-sm mt-4 font-medium flex items-center gap-2">
            <MessageCircle size={16}/>
-           Tenho dúvidas? Falar no Grupo VIP
+           Tenho dúvidas, quero entrar no grupo de espera
         </a>
       </div>
 
@@ -457,8 +455,8 @@ const Deliverables = () => (
       </div>
       
       <div className="mt-12 text-center">
-        <Button href={HOTMART_LINK} variant="success" className="text-lg px-8 py-4 no-underline animate-pulse">
-           GARANTA SEU ACESSO A TODO O ARSENAL AGORA
+        <Button href={HOTMART_LINK} variant="success" className="text-lg px-8 py-4 no-underline animate-pulse uppercase tracking-wide">
+           GARANTA SEU ACESSO A TODO ARSENAL AGORA
         </Button>
       </div>
     </div>
@@ -506,54 +504,6 @@ const Transformation = () => (
         <Button href={HOTMART_LINK} variant="secondary" className="text-lg px-12 no-underline">
           QUERO VIVER ESSA TRANSFORMAÇÃO
         </Button>
-      </div>
-    </div>
-  </section>
-);
-
-const TwoPaths = () => (
-  <section className="py-20 bg-cream-50">
-    <div className="container mx-auto px-4 max-w-5xl">
-      {/* Header */}
-      <div className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 bg-terra-100 text-brown-900 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
-          <span className="text-terra-600">🌷</span> ÚLTIMA CHANCE
-        </div>
-        <h2 className="font-serif text-3xl md:text-5xl text-brown-900 mb-4">
-          Você tem 2 caminhos a partir daqui...
-        </h2>
-        <p className="text-brown-700 text-lg">
-          Escolha com consciência — porque a endometriose não para enquanto você decide.
-        </p>
-      </div>
-
-      {/* Paths Grid */}
-      <div className="grid md:grid-cols-2 gap-6 mb-8">
-        {/* Path 1 */}
-        <div className="bg-white p-8 rounded-2xl shadow-sm border border-cream-200 flex flex-col h-full">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="bg-yellow-100 p-2 rounded-full">
-               <Frown className="w-6 h-6 text-yellow-600" />
-            </div>
-            <h3 className="font-bold text-xl text-brown-900">Caminho 1: continuar como está</h3>
-          </div>
-          <p className="text-brown-700 leading-relaxed">
-            Dor e inchaço como rotina, faltas no trabalho, medo do próximo ciclo, dependência de remédios e frustração por não ver evolução consistente. A doença segue progredindo enquanto você tenta "aguentar".
-          </p>
-        </div>
-
-        {/* Path 2 */}
-        <div className="bg-white p-8 rounded-2xl shadow-sm border-2 border-terra-100 flex flex-col h-full relative overflow-hidden">
-          <div className="flex items-center gap-3 mb-4 relative z-10">
-            <div className="bg-green-100 p-2 rounded-full">
-               <Sprout className="w-6 h-6 text-green-600" />
-            </div>
-            <h3 className="font-bold text-xl text-brown-900">Caminho 2: entrar no EndoLivre</h3>
-          </div>
-          <p className="text-brown-700 leading-relaxed relative z-10">
-            Você recebe um plano completo, cardápios, lista de alimentos, passo a passo Low FODMAP adaptado, suplementação e estilo de vida — tudo organizado para reduzir inflamação e te devolver controle, com suporte e comunidade.
-          </p>
-        </div>
       </div>
     </div>
   </section>
@@ -619,32 +569,50 @@ const OfferSection = () => (
   </section>
 );
 
-const LaunchBonuses = () => (
-  <section className="py-20 bg-terra-500 text-cream-50">
-    <div className="container mx-auto px-4 max-w-4xl text-center">
-      <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-8 backdrop-blur-sm border border-white/30">
-        <Gift size={20} className="text-cream-50" />
-        <span className="font-bold uppercase tracking-wider text-sm">Apenas para esta turma de lançamento</span>
-      </div>
-      
-      <h2 className="font-serif text-3xl md:text-5xl mb-12">Bônus Exclusivos de Lançamento</h2>
-      
-      <div className="grid md:grid-cols-2 gap-6 text-left mb-12">
-        <div className="bg-brown-900/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
-           <Zap className="w-10 h-10 text-yellow-400 mb-4" />
-           <h3 className="font-bold text-xl mb-2">Masterclass: Desinflamando na Prática</h3>
-           <p className="text-cream-50/80">Uma aula ao vivo (que ficará gravada) para tirar todas as dúvidas iniciais e ajustar a rota do seu tratamento.</p>
+const TwoPaths = () => (
+  <section className="py-20 bg-cream-50">
+    <div className="container mx-auto px-4 max-w-5xl">
+      {/* Header */}
+      <div className="text-center mb-12">
+        <div className="inline-flex items-center gap-2 bg-terra-100 text-brown-900 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+          <span className="text-terra-600">🌷</span> ÚLTIMA CHANCE
         </div>
-        <div className="bg-brown-900/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
-           <Users className="w-10 h-10 text-yellow-400 mb-4" />
-           <h3 className="font-bold text-xl mb-2">Comunidade VIP de Alunas</h3>
-           <p className="text-cream-50/80">Acesso exclusivo ao grupo de alunas para troca de experiências e suporte mútuo durante a jornada.</p>
-        </div>
+        <h2 className="font-serif text-3xl md:text-5xl text-brown-900 mb-4">
+          Você tem 2 caminhos a partir daqui...
+        </h2>
+        <p className="text-brown-700 text-lg">
+          Escolha com consciência — porque a endometriose não para enquanto você decide.
+        </p>
       </div>
 
-      <Button href={HOTMART_LINK} variant="secondary" className="bg-white text-terra-600 border-none hover:bg-cream-100 text-lg px-12 shadow-2xl">
-         GARANTIR MINHA VAGA COM BÔNUS
-      </Button>
+      {/* Paths Grid */}
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
+        {/* Path 1 */}
+        <div className="bg-white p-8 rounded-2xl shadow-sm border border-cream-200 flex flex-col h-full">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="bg-yellow-100 p-2 rounded-full">
+               <Frown className="w-6 h-6 text-yellow-600" />
+            </div>
+            <h3 className="font-bold text-xl text-brown-900">Caminho 1: continuar como está</h3>
+          </div>
+          <p className="text-brown-700 leading-relaxed">
+            Dor e inchaço como rotina, faltas no trabalho, medo do próximo ciclo, dependência de remédios e frustração por não ver evolução consistente. A doença segue progredindo enquanto você tenta "aguentar".
+          </p>
+        </div>
+
+        {/* Path 2 */}
+        <div className="bg-white p-8 rounded-2xl shadow-sm border-2 border-terra-100 flex flex-col h-full relative overflow-hidden">
+          <div className="flex items-center gap-3 mb-4 relative z-10">
+            <div className="bg-green-100 p-2 rounded-full">
+               <Sprout className="w-6 h-6 text-green-600" />
+            </div>
+            <h3 className="font-bold text-xl text-brown-900">Caminho 2: entrar no EndoLivre</h3>
+          </div>
+          <p className="text-brown-700 leading-relaxed relative z-10">
+            Você recebe um plano completo, cardápios, lista de alimentos, passo a passo Low FODMAP adaptado, suplementação e estilo de vida — tudo organizado para reduzir inflamação e te devolver controle, com suporte e comunidade.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 );
@@ -762,26 +730,25 @@ const FooterCTA = () => (
       <Heart className="w-16 h-16 text-terra-500 mx-auto mb-6" fill="currentColor" />
       
       <h2 className="font-serif text-3xl md:text-5xl text-brown-900 mb-6">
-        Chegou a hora de viver sem dor.
+        Sua última chance de viver sem dor está a um clique
       </h2>
       
       <p className="text-brown-800 text-lg mb-10">
-        As inscrições para o Protocolo EndoLivre estão <strong>ABERTAS</strong>.
-        <br/>Não deixe sua saúde para depois. O momento é agora.
+        Você está nesta página porque está DESESPERADA por uma solução. 
+        <br/>Endometriose não tem cura, <strong className="text-terra-600">MAS TEM CONTROLE TOTAL</strong>.
       </p>
 
       <div className="bg-white p-8 rounded-3xl shadow-lg border-2 border-terra-100 max-w-xl mx-auto">
         <p className="font-serif text-xl text-brown-900 mb-6">
-          Garanta sua vaga no Lançamento
+          Comece agora sua jornada
         </p>
         <Button href={HOTMART_LINK} variant="success" fullWidth className="text-lg py-5 animate-bounce-slow no-underline">
           COMPRAR O PROTOCOLO AGORA
         </Button>
-        <div className="mt-6 pt-6 border-t border-cream-100">
-            <p className="text-sm text-brown-600 mb-2">Ainda não está pronta?</p>
+        <div className="mt-4 pt-4 border-t border-cream-100">
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-sm text-terra-600 font-bold hover:text-terra-700 underline flex items-center justify-center gap-2">
-               <MessageCircle className="w-4 h-4" />
-               Entrar no grupo para receber dicas semanais
+               <MessageCircle size={16}/>
+               Ainda tenho dúvidas? Falar no Grupo VIP
             </a>
         </div>
       </div>
@@ -808,7 +775,6 @@ export default function App() {
       <Transformation />
       <TwoPaths />
       <OfferSection />
-      <LaunchBonuses />
       <Testimonials />
       <FAQ />
       <FooterCTA />
