@@ -21,7 +21,9 @@ import {
   Sprout,
   HelpCircle,
   Lock,
-  MessageCircle
+  MessageCircle,
+  Gift,
+  Zap
 } from 'lucide-react';
 import { Button } from './components/Button';
 import { IMG_EXPERT, IMG_HERO_METHOD, HOTMART_LINK, WHATSAPP_LINK } from './constants';
@@ -72,7 +74,7 @@ const Hero = () => (
 
         <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-terra-600 hover:text-terra-700 underline text-sm mt-4 font-medium flex items-center gap-2">
            <MessageCircle size={16}/>
-           Tenho dúvidas, quero entrar no grupo de espera
+           Tenho dúvidas? Falar no Grupo VIP
         </a>
       </div>
 
@@ -499,6 +501,12 @@ const Transformation = () => (
           </div>
         ))}
       </div>
+
+      <div className="mt-16 text-center">
+        <Button href={HOTMART_LINK} variant="secondary" className="text-lg px-12 no-underline">
+          QUERO VIVER ESSA TRANSFORMAÇÃO
+        </Button>
+      </div>
     </div>
   </section>
 );
@@ -608,6 +616,36 @@ const OfferSection = () => (
            </div>
         </div>
      </div>
+  </section>
+);
+
+const LaunchBonuses = () => (
+  <section className="py-20 bg-terra-500 text-cream-50">
+    <div className="container mx-auto px-4 max-w-4xl text-center">
+      <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-8 backdrop-blur-sm border border-white/30">
+        <Gift size={20} className="text-cream-50" />
+        <span className="font-bold uppercase tracking-wider text-sm">Apenas para esta turma de lançamento</span>
+      </div>
+      
+      <h2 className="font-serif text-3xl md:text-5xl mb-12">Bônus Exclusivos de Lançamento</h2>
+      
+      <div className="grid md:grid-cols-2 gap-6 text-left mb-12">
+        <div className="bg-brown-900/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
+           <Zap className="w-10 h-10 text-yellow-400 mb-4" />
+           <h3 className="font-bold text-xl mb-2">Masterclass: Desinflamando na Prática</h3>
+           <p className="text-cream-50/80">Uma aula ao vivo (que ficará gravada) para tirar todas as dúvidas iniciais e ajustar a rota do seu tratamento.</p>
+        </div>
+        <div className="bg-brown-900/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
+           <Users className="w-10 h-10 text-yellow-400 mb-4" />
+           <h3 className="font-bold text-xl mb-2">Comunidade VIP de Alunas</h3>
+           <p className="text-cream-50/80">Acesso exclusivo ao grupo de alunas para troca de experiências e suporte mútuo durante a jornada.</p>
+        </div>
+      </div>
+
+      <Button href={HOTMART_LINK} variant="secondary" className="bg-white text-terra-600 border-none hover:bg-cream-100 text-lg px-12 shadow-2xl">
+         GARANTIR MINHA VAGA COM BÔNUS
+      </Button>
+    </div>
   </section>
 );
 
@@ -724,24 +762,26 @@ const FooterCTA = () => (
       <Heart className="w-16 h-16 text-terra-500 mx-auto mb-6" fill="currentColor" />
       
       <h2 className="font-serif text-3xl md:text-5xl text-brown-900 mb-6">
-        Sua última chance de viver sem dor está a um clique
+        Chegou a hora de viver sem dor.
       </h2>
       
       <p className="text-brown-800 text-lg mb-10">
-        Você está nesta página porque está DESESPERADA por uma solução. 
-        <br/>Endometriose não tem cura, <strong className="text-terra-600">MAS TEM CONTROLE TOTAL</strong>.
+        As inscrições para o Protocolo EndoLivre estão <strong>ABERTAS</strong>.
+        <br/>Não deixe sua saúde para depois. O momento é agora.
       </p>
 
       <div className="bg-white p-8 rounded-3xl shadow-lg border-2 border-terra-100 max-w-xl mx-auto">
         <p className="font-serif text-xl text-brown-900 mb-6">
-          Comece agora sua jornada
+          Garanta sua vaga no Lançamento
         </p>
         <Button href={HOTMART_LINK} variant="success" fullWidth className="text-lg py-5 animate-bounce-slow no-underline">
           COMPRAR O PROTOCOLO AGORA
         </Button>
-        <div className="mt-4 pt-4 border-t border-cream-100">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-sm text-brown-500 hover:text-terra-600 underline">
-               Ainda tenho dúvidas? Falar no Grupo VIP
+        <div className="mt-6 pt-6 border-t border-cream-100">
+            <p className="text-sm text-brown-600 mb-2">Ainda não está pronta?</p>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-sm text-terra-600 font-bold hover:text-terra-700 underline flex items-center justify-center gap-2">
+               <MessageCircle className="w-4 h-4" />
+               Entrar no grupo para receber dicas semanais
             </a>
         </div>
       </div>
@@ -768,6 +808,7 @@ export default function App() {
       <Transformation />
       <TwoPaths />
       <OfferSection />
+      <LaunchBonuses />
       <Testimonials />
       <FAQ />
       <FooterCTA />
